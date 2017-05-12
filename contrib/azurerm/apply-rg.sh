@@ -11,9 +11,9 @@ fi
 
 ansible-playbook generate-templates.yml
 
-azure group deployment create -f ./.generated/network.json -g $AZURE_RESOURCE_GROUP
-azure group deployment create -f ./.generated/storage.json -g $AZURE_RESOURCE_GROUP
-azure group deployment create -f ./.generated/availability-sets.json -g $AZURE_RESOURCE_GROUP
-azure group deployment create -f ./.generated/bastion.json -g $AZURE_RESOURCE_GROUP
-azure group deployment create -f ./.generated/masters.json -g $AZURE_RESOURCE_GROUP
-azure group deployment create -f ./.generated/minions.json -g $AZURE_RESOURCE_GROUP
+az group deployment create --template-file ./.generated/network.json --resource-group $AZURE_RESOURCE_GROUP
+az group deployment create --template-file ./.generated/storage.json --resource-group $AZURE_RESOURCE_GROUP
+az group deployment create --template-file ./.generated/availability-sets.json --resource-group $AZURE_RESOURCE_GROUP
+az group deployment create --template-file ./.generated/bastion.json --resource-group $AZURE_RESOURCE_GROUP
+az group deployment create --template-file ./.generated/masters.json --resource-group $AZURE_RESOURCE_GROUP
+az group deployment create --template-file ./.generated/minions.json --resource-group $AZURE_RESOURCE_GROUP

@@ -11,4 +11,4 @@ fi
 
 ansible-playbook generate-templates.yml
 
-azure group deployment create -g "$AZURE_RESOURCE_GROUP" -f ./.generated/clear-rg.json -m Complete
+az group deployment create --resource-group "$AZURE_RESOURCE_GROUP" --template-file ./.generated/clear-rg.json --mode Complete

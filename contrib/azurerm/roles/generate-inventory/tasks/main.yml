@@ -1,7 +1,7 @@
 ---
 
 - name: Query Azure VMs
-  command: azure vm list-ip-address --json {{ azure_resource_group }}
+  command: az vm list --resource-group {{ azure_resource_group }} --output json --show-details
   register: vm_list_cmd
 
 - set_fact:
